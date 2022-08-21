@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maqueta Miel</title>
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/template.css" />
+    <link rel="stylesheet" href="css/modulos.css" />
+    <link rel="stylesheet" href="css/w3.css" />
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/modified.css" />
+  </head>
+  <body class="w3-light-grey">
+    <header class="w3-top">
+      <div class="w3-container">
+        <img
+          src="https://miel.unlam.edu.ar/vista/imagenes/home/logo-unlam-40.png"
+          class="w3-margin-right"
+          alt="logo unlam"
+        />
+        <img
+          src="https://miel.unlam.edu.ar/vista/imagenes/home/logo-miel-40-largo.png"
+          class="w3-hide-small"
+          alt="logo miel"
+        />
+        <img
+          src="https://miel.unlam.edu.ar/vista/imagenes/home/logo-miel-40.png"
+          class="w3-hide-medium w3-hide-large"
+          alt="logo miel"
+        />
+      </div>
+    </header>
+
+    <section
+      id="login"
+      style="
+        background-image: url('https://miel.unlam.edu.ar/vista/imagenes/home/foto-home-1.jpg');
+      "
+    >
+      <div class="w3-container w3-padding-16">
+        <div
+          id="card-home"
+          class="w3-container w3-theme w3-card-4 w3-right w3-padding-16"
+          style="width: 400px"
+        >
+          <h1 style="margin-top: 70px">Acceso a la plataforma MIeL</h1>
+          <div
+            class="w3-container w3-white w3-padding-bottom"
+            style="width: 100%; padding: 5px 24px"
+          >
+            <div id="card-content-login">
+              <form
+                id="formLogin"
+                action="https://miel.unlam.edu.ar/principal/event/login/"
+                method="post"
+                novalidate="novalidate"
+              >
+                <p>
+                  <label for="usuario">Usuario:</label>
+                  <input
+                    type="text"
+                    id="usuario"
+                    name="usuario"
+                    class="w3-input valid"
+                    maxlength="30"
+                    aria-required="true"
+                    aria-invalid="false"
+                  />
+                  <span class="input-bar"></span>
+                </p>
+                <p>
+                  <label for="clave">Contraseña:</label>
+                  <input
+                    type="password"
+                    id="clave"
+                    name="clave"
+                    class="w3-input valid"
+                    maxlength="30"
+                    aria-required="true"
+                    aria-invalid="false"
+                  />
+                  <span class="input-bar"></span>
+                </p>
+                <div class="w3-section">
+                  <span
+                    id="mensajeOkLogin"
+                    class="w3-text-green w3-block w3-hide"
+                  ></span>
+                  <span
+                    id="mensajeErrorLogin"
+                    class="w3-text-red w3-block w3-hide"
+                  ></span>
+                  <a id="btnLogin" class="w3-blue w3-btn-block w3-margin-top">
+                    INGRESAR
+                  </a>
+                  <a
+                    id="btnOlvideClave"
+                    class="w3-transparent w3-block w3-margin-top w3-center w3-text-blue"
+                  >
+                    Olvidé mi contraseña
+                  </a>
+                  <hr />
+                  <a
+                    href="https://mielingreso.unlam.edu.ar/"
+                    class="w3-indigo w3-btn-block"
+                    >CAMBIAR A MIeL INGRESANTES</a
+                  >
+                </div>
+              </form>
+            </div>
+
+            <div id="card-content-aviso-recuperar-clave" style="display: none">
+              <p><strong>Olvidé mi contraseña</strong></p>
+              <p>
+                Si usted es ALUMNO/A, deberá recuperar su contraseña a través
+                del sistema de Intraconsulta.
+              </p>
+              <p>
+                Si usted es DOCENTE, podrá recuperar su contraseña por este
+                medio si tiene un usuario activo en MIeL y una cuenta de email
+                cargada.
+              </p>
+              <div class="w3-row-padding w3-section">
+                <div class="w3-col m6 mobile-padding-0">
+                  <a
+                    href="https://alumno2.unlam.edu.ar/"
+                    target="_blank"
+                    class="w3-blue w3-btn-block w3-margin-top"
+                    >Soy alumno/a</a
+                  >
+                </div>
+                <div class="w3-col m6 mobile-padding-0">
+                  <a class="btnContinuar w3-blue w3-btn-block w3-margin-top"
+                    >Soy docente</a
+                  >
+                </div>
+                <div class="w3-col w3-padding-0">
+                  <a class="btnVolver w3-light-grey w3-btn-block w3-margin-top"
+                    >Volver</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div
+              id="card-content-recuperar-clave-usuario"
+              style="display: none"
+            >
+              <form
+                id="formRecuperarClave"
+                action="https://miel.unlam.edu.ar/principal/event/buscarUsuarioRecuperarClaveAjax/"
+                method="post"
+                novalidate="novalidate"
+              >
+                <p><strong>Olvidé mi contraseña</strong></p>
+                <p>
+                  <label for="usuarioRecuperar"
+                    >Ingrese su DNI o usuario:</label
+                  >
+                  <input
+                    type="text"
+                    id="usuarioRecuperar"
+                    name="usuarioRecuperar"
+                    class="w3-input"
+                    maxlength="30"
+                  />
+                  <span class="input-bar"></span>
+                </p>
+                <span
+                  id="mensajeErrorRecuperarClave"
+                  class="w3-text-red w3-block w3-hide"
+                ></span>
+                <div class="w3-row-padding w3-section">
+                  <div class="w3-col m6 mobile-padding-0">
+                    <a
+                      class="btnVolver w3-light-grey w3-btn-block w3-margin-top"
+                      >Volver</a
+                    >
+                  </div>
+                  <div class="w3-col m6 mobile-padding-0">
+                    <a class="btnContinuar w3-blue w3-btn-block w3-margin-top"
+                      >Continuar</a
+                    >
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div id="card-content-recuperar-clave-email" style="display: none">
+              <form
+                id="formRecuperarClaveEmail"
+                action="https://miel.unlam.edu.ar/principal/event/enviarEmailRecuperarClaveAjax/"
+                method="post"
+                novalidate="novalidate"
+              >
+                <p><strong>Olvidé mi contraseña</strong></p>
+                <p>
+                  Le enviaremos una enlace a la cuenta
+                  <strong id="emailOculto"></strong> para que pueda restablecer
+                  su contraseña. Por favor, ingrese su email completo y haga
+                  click en "Continuar."
+                </p>
+                <p>
+                  <input
+                    type="hidden"
+                    id="idUsuarioRecuperar"
+                    name="idUsuarioRecuperar"
+                    value=""
+                  />
+                  <label for="emailRecuperar">Email:</label>
+                  <input
+                    type="text"
+                    id="emailRecuperar"
+                    name="emailRecuperar"
+                    class="w3-input"
+                    maxlength="80"
+                    autocomplete="off"
+                  />
+                  <span class="input-bar"></span>
+                </p>
+                <span
+                  id="mensajeErrorRecuperarClaveEmail"
+                  class="w3-text-red w3-block w3-hide"
+                ></span>
+                <div class="w3-row-padding w3-section">
+                  <div class="w3-col m6 mobile-padding-0">
+                    <a
+                      class="btnVolver w3-light-grey w3-btn-block w3-margin-top"
+                      >Volver</a
+                    >
+                  </div>
+                  <div class="w3-col m6 mobile-padding-0">
+                    <a class="btnContinuar w3-blue w3-btn-block w3-margin-top"
+                      >Continuar</a
+                    >
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div
+              id="card-content-recuperar-clave-mensaje"
+              style="display: none"
+            >
+              <p><strong>Olvidé mi contraseña</strong></p>
+              <p>
+                Le enviamos por email un enlace para reestablecer su contraseña
+                de MIeL. El enlace tendrá una validez de 2 horas.
+              </p>
+              <p>
+                Si aún no recibió el correo, aguarde unos segundos, revise su
+                bandeja de Spam o vuelva a intentar.
+              </p>
+              <div class="w3-section">
+                <a class="btnVolver w3-blue w3-btn-block">Volver</a>
+              </div>
+            </div>
+
+            <div id="card-content-cambiar-clave" style="display: none">
+              <form
+                id="formCambiarClave"
+                action="https://miel.unlam.edu.ar/principal/event/cambiarClaveAjax/"
+                method="post"
+                novalidate="novalidate"
+              >
+                <input
+                  type="hidden"
+                  id="codigoCambiarClave"
+                  name="codigoCambiarClave"
+                  value=""
+                />
+
+                <p><strong>Nueva contraseña</strong></p>
+                <p>
+                  <label for="claveNueva">Ingrese su nueva contraseña:</label>
+                  <input
+                    type="password"
+                    id="claveNueva"
+                    name="claveNueva"
+                    class="w3-input"
+                    maxlength="30"
+                    autocomplete="off"
+                  />
+                  <span class="input-bar"></span>
+                </p>
+                <p>
+                  <label for="claveNueva2">Repita la contraseña:</label>
+                  <input
+                    type="password"
+                    id="claveNueva2"
+                    name="claveNueva2"
+                    class="w3-input"
+                    maxlength="30"
+                    autocomplete="off"
+                  />
+                  <span class="input-bar"></span>
+                </p>
+                <div class="w3-row-padding w3-section">
+                  <div class="w3-col m6 mobile-padding-0">
+                    <a
+                      href="https://miel.unlam.edu.ar/principal/home/"
+                      class="w3-light-grey w3-btn-block w3-margin-top"
+                      >Cancelar</a
+                    >
+                  </div>
+                  <div class="w3-col m6 mobile-padding-0">
+                    <a class="btnContinuar w3-blue w3-btn-block w3-margin-top"
+                      >Confirmar</a
+                    >
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="w3-container">
+      <!--CARDS DE CONTENIDO-->
+      <div class="w3-cell-row w3-margin-top cards-contenido">
+        <div class="w3-cell card-contenido mobile-padding-0">
+          <div
+            class="w3-card w3-white w3-leftbar w3-border-theme w3-hover-shadow new-card-container"
+          >
+            <div class="w3-container">
+              <h6 class="w3-text-theme">CICLO LECTIVO 2022</h6>
+            </div>
+            <div class="w3-container w3-padding-16 new-card">
+              <div class="new-card-left"><img src="sidebar.png" /></div>
+              <div class="new-card-right">
+                <div class="new-card-title">INFORMACION</div>
+                <div class="new-card-description">
+                  Los/as alumnos/as ingresantes para el ciclo lectivo 2022 van a
+                  ver reflejados sus cursos en la plataforma MIeL (Materias
+                  Interactivas en Línea) a partir de la semana del 4 de abril de
+                  2022
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="w3-cell card-contenido mobile-padding-0">
+          <div
+            class="w3-card w3-white w3-leftbar w3-border-theme w3-hover-shadow"
+          >
+            <div class="w3-container">
+              <h6 class="w3-text-theme">CICLO LECTIVO 2022</h6>
+            </div>
+            <div class="w3-container w3-padding-16">
+              <a href="https://www.youtube.com/embed/zexJlch7I3k" target="_new">
+                <img
+                  src="https://miel.unlam.edu.ar/vista/imagenes/home/placa_ciclo_academico.jpg"
+                  width="100%"
+                  alt=""
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--CARDS DE ENLACES-->
+      <div class="w3-row-padding w3-margin-top w3-padding-16">
+        <div class="w3-col m4 w3-margin-bottom mobile-padding-0">
+          <a
+            class="w3-card w3-white w3-center w3-hover-shadow card-enlace w3-block"
+            href="https://miel.unlam.edu.ar/data2/ayuda/primeros_pasos_2021.pdf"
+            target="_blank"
+          >
+            <img
+              src="https://miel.unlam.edu.ar/vista/imagenes/home/foto-card-primeros-pasos.jpg"
+              class="w3-hide-small w3-image"
+              alt="foto lapices"
+            />
+            <div class="w3-container">
+              <h5 class="w3-text-orange">PRIMEROS PASOS EN MIeL</h5>
+              <h6>Ayuda en el uso de la plataforma MIeL</h6>
+            </div>
+          </a>
+        </div>
+
+        <div class="w3-col m4 w3-margin-bottom mobile-padding-0 col-middle">
+          <a
+            class="w3-card w3-white w3-center w3-hover-shadow card-enlace w3-block openModal"
+            data-target="modalFaqs"
+          >
+            <img
+              src="https://miel.unlam.edu.ar/vista/imagenes/home/foto-card-faqs.png"
+              class="w3-hide-small w3-image"
+              alt="foto preguntas frecuentes"
+            />
+            <div class="w3-container">
+              <h5 class="w3-text-blue">PREGUNTAS FRECUENTES</h5>
+              <h6>Acerca de MIeL y la Educaci&oacute;n a Distancia</h6>
+            </div>
+          </a>
+        </div>
+
+        <div class="w3-col m4 w3-margin-bottom mobile-padding-0">
+          <a
+            class="w3-card w3-white w3-center w3-hover-shadow card-enlace w3-block"
+            href="https://biblioteca.unlam.edu.ar"
+            target="_blank"
+          >
+            <img
+              src="https://miel.unlam.edu.ar/vista/imagenes/home/foto-card-biblioteca.jpg"
+              class="w3-hide-small w3-image"
+              alt="foto biblioteca"
+            />
+            <div class="w3-container">
+              <h5 class="w3-text-red">CAT&Aacute;LOGO BIBLIOGR&Aacute;FICO</h5>
+              <h6>Acceso a la Biblioteca Leopoldo Marechal</h6>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!--PIE DE PAGINA-->
+    <footer class="w3-dark-grey">
+      <div class="w3-row w3-container w3-padding-24">
+        <div class="w3-col l5 w3-container w3-dark-grey">
+          <h5 style="color: #cccccc">UNIVERSIDAD NACIONAL DE LA MATANZA</h5>
+          <p>
+            <i class="material-icons w3-margin-right" aria-hidden="true"
+              >place</i
+            >
+            Florencio Varela 1903 (B1754JEC)
+          </p>
+          <p>
+            <i class="material-icons w3-margin-right" aria-hidden="true"
+              >place</i
+            >
+            San Justo, Buenos Aires, Argentina
+          </p>
+          <p>
+            <i class="material-icons w3-margin-right" aria-hidden="true"
+              >phone</i
+            >
+            <a href="tel:+5411 4480-8900">(+54 11) 4480-8900</a>
+          </p>
+          <p>
+            <i class="material-icons w3-margin-right" aria-hidden="true"
+              >link</i
+            >
+            <a href="https://www.unlam.edu.ar">www.unlam.edu.ar</a>
+          </p>
+          <p class="redes">
+            <a target="_blank" href="https://www.facebook.com/UnlamOficial">
+              <img
+                src="https://miel.unlam.edu.ar/vista/imagenes/home/icono-facebook-32.png"
+                alt="facebook unlam"
+            /></a>
+            <a target="_blank" href="https://twitter.com/UnlamOficial">
+              <img
+                src="https://miel.unlam.edu.ar/vista/imagenes/home/icono-twitter-32.png"
+                alt="twitter unlam"
+            /></a>
+            <a target="_blank" href="https://www.instagram.com/unlamoficial">
+              <img
+                src="https://miel.unlam.edu.ar/vista/imagenes/home/icono-instagram-32.png"
+                alt="instagram unlam"
+            /></a>
+          </p>
+        </div>
+
+        <div class="w3-col l4 m6 w3-container w3-dark-grey">
+          <h5 style="color: #cccccc">ENLACES INSTITUCIONALES</h5>
+          <p>
+            <a target="_blank" href="https://humanidades.unlam.edu.ar"
+              >Dpto. Humanidades y Ciencias Sociales</a
+            >
+          </p>
+          <p>
+            <a target="_blank" href="https://derecho.unlam.edu.ar"
+              >Dpto. Derecho y Ciencia Pol&iacute;tica</a
+            >
+          </p>
+          <p>
+            <a target="_blank" href="https://ingenieria.unlam.edu.ar"
+              >Dpto. Ingenier&iacute;a e Investigaciones Tecnol&oacute;gicas</a
+            >
+          </p>
+          <p>
+            <a target="_blank" href="https://economicas.unlam.edu.ar"
+              >Dpto. Ciencias Econ&oacute;micas</a
+            >
+          </p>
+          <p>
+            <a target="_blank" href="https://salud.unlam.edu.ar"
+              >Dpto. Ciencias de la Salud</a
+            >
+          </p>
+        </div>
+
+        <div class="w3-col l3 m6 w3-container w3-dark-grey">
+          <h5 class="w3-hide-small">&nbsp;</h5>
+          <p>
+            <a target="_blank" href="https://posgrado.unlam.edu.ar"
+              >Escuela de Posgrado</a
+            >
+          </p>
+          <p>
+            <a target="_blank" href="https://formacioncontinua.unlam.edu.ar"
+              >Escuela de Formaci&oacute;n Continua</a
+            >
+          </p>
+          <p>
+            <a target="_blank" href="https://biblioteca.unlam.edu.ar"
+              >Biblioteca Leopoldo Marechal</a
+            >
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="w3-container w3-padding-32 w3-center w3-text-light-grey footer-miel"
+      >
+        MIeL - Materias Interactivas en L&iacute;nea - Departamento de
+        Ingenier&iacute;a e Investigaciones Tecnol&oacute;gicas - 2022<br />
+        <a href="mailto:miel@unlam.edu.ar">miel@unlam.edu.ar</a><br />
+      </div>
+    </footer>
+  </body>
+</html>
